@@ -6,12 +6,14 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            const string develperName = "Timmy", className = "MIS3013", date = "April 3, 2021";
+            //Declaring Variables
+            const string develperName = "Timmy Luong", className = "MIS3013", date = "April 3, 2021";
             DeveloperInformation(develperName, className, date);
             double num1, num2, num3, total;
             string answer = "";
             Console.SetWindowSize(130, 30);
 
+            //Asking the user to input value to be calcualted and to see if they want to do a new calculation or use their previous answer
             Console.WriteLine("This program is a calculator");
             Console.WriteLine("Please enter the first value:");
             answer = Console.ReadLine();
@@ -56,6 +58,16 @@ namespace Calculator
 
             Console.WriteLine("Thank you for using the calculator program! Have a great day!");
         }
+
+        /// <summary>
+        /// Take the user answer and do the correct operation to the inputted values
+        /// </summary>
+        /// <param name="answer"></param>
+        /// <param name="num1"></param>
+        /// <param name="num2"></param>
+        /// <returns>
+        /// This returns the total of the operation the user requested
+        /// </returns>
         static double Operation(string answer, double num1, double num2)
         {
             double sum = 0;
@@ -85,6 +97,14 @@ namespace Calculator
             }
             return sum;
         }
+
+        /// <summary>
+        /// This validates that what the user enter was a number and not a string
+        /// </summary>
+        /// <param name="answer"></param>
+        /// <returns>
+        /// This returns the value that was enterd
+        /// </returns>
         static double DataValidation(string answer)
         {
             double number;
@@ -96,6 +116,14 @@ namespace Calculator
             return number;
         }
 
+        /// <summary>
+        /// This does the operation the user requested
+        /// </summary>
+        /// <param name="val1"></param>
+        /// <param name="val2"></param>
+        /// <returns>
+        /// Returns the result of the operation the user reqeusted
+        /// </returns>
         static double Add(double val1, double val2)
         {
             return val1 + val2;
@@ -112,6 +140,13 @@ namespace Calculator
         {
             return val1 / val2;
         }
+
+        /// <summary>
+        /// This output the developer information to the user
+        /// </summary>
+        /// <param name="developerName"></param>
+        /// <param name="className"></param>
+        /// <param name="date"></param>
         static void DeveloperInformation(string developerName, string className, string date)
         {
             Console.WriteLine($"{developerName} wrote this program for {className} on {date}.\n");
