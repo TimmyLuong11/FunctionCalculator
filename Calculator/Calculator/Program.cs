@@ -62,9 +62,9 @@ namespace Calculator
         /// <summary>
         /// Take the user answer and do the correct operation to the inputted values
         /// </summary>
-        /// <param name="answer"></param>
-        /// <param name="num1"></param>
-        /// <param name="num2"></param>
+        /// <param name="answer">A string representing the operation</param>
+        /// <param name="num1">A double representing the first number</param>
+        /// <param name="num2">A double representing the second number</param>
         /// <returns>
         /// This returns the total of the operation the user requested
         /// </returns>
@@ -73,23 +73,19 @@ namespace Calculator
             double sum = 0;
             if (answer[0] == 'a')
             {
-                sum = Add(num1, num2);
-                
+                sum = Add(num1, num2);                
             }
             else if (answer[0] == 's')
             {
                 sum = Subtract(num1, num2);
-
             }
             else if (answer[0] == 'm')
             {
                 sum = Multiply(num1, num2);
-
             }
             else if (answer[0] == 'd')
             {
                 sum = Divide(num1, num2);
-
             }
             else
             {
@@ -101,7 +97,7 @@ namespace Calculator
         /// <summary>
         /// This validates that what the user enter was a number and not a string
         /// </summary>
-        /// <param name="answer"></param>
+        /// <param name="answer">A string representing the number to be validated</param>
         /// <returns>
         /// This returns the value that was enterd
         /// </returns>
@@ -117,10 +113,10 @@ namespace Calculator
         }
 
         /// <summary>
-        /// This does the operation the user requested
+        /// This does the addition operation the user requested
         /// </summary>
-        /// <param name="val1"></param>
-        /// <param name="val2"></param>
+        /// <param name="val1">A double representing the first value</param>
+        /// <param name="val2">A double representing the second value</param>
         /// <returns>
         /// Returns the result of the operation the user reqeusted
         /// </returns>
@@ -128,14 +124,41 @@ namespace Calculator
         {
             return val1 + val2;
         }
+
+        /// <summary>
+        /// This does the subtraction operation the user requested
+        /// </summary>
+        /// <param name="val1">A double representing the first value</param>
+        /// <param name="val2">A double representing the second value</param>
+        /// <returns>
+        /// Returns the result of the operation the user reqeusted
+        /// </returns>
         static double Subtract(double val1, double val2)
         {
             return val1 - val2;
         }
+
+        /// <summary>
+        /// This does the multiplication operation the user requested
+        /// </summary>
+        /// <param name="val1">A double representing the first value</param>
+        /// <param name="val2">A double representing the second value</param>
+        /// <returns>
+        /// Returns the result of the operation the user reqeusted
+        /// </returns>
         static double Multiply(double val1, double val2)
         {
             return val1 * val2;
         }
+
+        /// <summary>
+        /// This does the division operation the user requested
+        /// </summary>
+        /// <param name="val1">A double representing the first value</param>
+        /// <param name="val2">A double representing the second value</param>
+        /// <returns>
+        /// Returns the result of the operation the user reqeusted
+        /// </returns>
         static double Divide(double val1, double val2)
         {
             return val1 / val2;
@@ -144,9 +167,9 @@ namespace Calculator
         /// <summary>
         /// This output the developer information to the user
         /// </summary>
-        /// <param name="developerName"></param>
-        /// <param name="className"></param>
-        /// <param name="date"></param>
+        /// <param name="developerName">A stirng representing the developer name</param>
+        /// <param name="className">A string representing the class name</param>
+        /// <param name="date">A string representing the date the program was written</param>
         static void DeveloperInformation(string developerName, string className, string date)
         {
             Console.WriteLine($"{developerName} wrote this program for {className} on {date}.\n");
